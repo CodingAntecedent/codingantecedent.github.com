@@ -1,0 +1,992 @@
+@import url(modules/normalize.css);
+/* line 34, modules/mixins.css.scss */
+.white-background {
+  background: white;
+  border-radius: 5px;
+  color: #e25b29;
+  font-size: 0.75em;
+  padding: 2px 7px; }
+  /* line 40, modules/mixins.css.scss */
+  .white-background:hover {
+    background: #be461a; }
+  /* line 43, modules/mixins.css.scss */
+  .white-background a:hover {
+    color: #16354a !important; }
+
+/*
+Flexible Grid 
+adapted from : http://framelessgrid.com
+*/
+/*
+  Margin, padding, and border resets
+	except for form elements
+*/
+/* line 56, modules/grid.css.scss */
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+@font-face {
+  font-family: "Weston-Free";
+  src: url("/fonts/Weston_Free.eot?") format("eot"), url("/fonts/Weston_Free.woff") format("woff"), url("/fonts/Weston_Free.ttf") format("truetype"), url("/fonts/Weston_Free.svg#Weston-Free") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Weston-Light-Free";
+  src: url("/fonts/Weston_Light_Free.eot?") format("eot"), url("/fonts/Weston_Light_Free.woff") format("woff"), url("/fonts/Weston_Light_Free.ttf") format("truetype"), url("/fonts/Weston_Light_Free.svg#Weston-Light-Free") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 10, site.css.scss */
+html, body, section, div, ul, li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*   site wide layouts ---------------------------------------*/
+/* line 14, site.css.scss */
+body {
+  background: white;
+  color: #594f4f;
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  height: 100%;
+  line-height: 1.75;
+  margin: 0 auto; }
+
+/* line 22, site.css.scss */
+h1, h2, h3, h4, h5 {
+  font-family: 'Weston-Light-Free'; }
+
+/* line 25, site.css.scss */
+h2 {
+  color: #e25b29;
+  font-size: 1.5em;
+  margin: 0.5em 0 0.5em;
+  text-align: center; }
+
+/* line 31, site.css.scss */
+h3 {
+  font-family: 'Weston-Free'; }
+
+/* line 34, site.css.scss */
+p {
+  margin-bottom: 0.625em; }
+
+/* line 38, site.css.scss */
+a, a:visited {
+  color: #e25b29;
+  text-decoration: none; }
+  /* line 41, site.css.scss */
+  a:hover, a:visited:hover {
+    color: #eea083; }
+  /* line 44, site.css.scss */
+  a.button, a:visited.button {
+    background: #e25b29;
+    border-radius: 0.3125em;
+    color: white;
+    padding: 10px 80px;
+    margin: 0 auto; }
+    /* line 50, site.css.scss */
+    a.button:hover, a:visited.button:hover {
+      background: #be461a;
+      color: white; }
+    /* line 54, site.css.scss */
+    a.button.apply, a:visited.button.apply {
+      display: inline;
+      padding: 0.5em 0.875em;
+      margin-bottom: 0em; }
+
+/* line 63, site.css.scss */
+header a, header a:visited, footer a, footer a:visited {
+  color: #16354a;
+  text-decoration: none; }
+  /* line 66, site.css.scss */
+  header a:hover, header a:visited:hover, footer a:hover, footer a:visited:hover {
+    color: #3989c0; }
+
+/* line 72, site.css.scss */
+header {
+  background: white;
+  border-bottom: 1px solid #eaeaea;
+  min-height: 6.875em;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998; }
+  /* line 82, site.css.scss */
+  header img {
+    display: inline-block;
+    height: 5em;
+    margin: 0.9375em 0 0 0.9375em; }
+  /* line 87, site.css.scss */
+  header h1 {
+    display: inline-block;
+    font-size: 1.6875em;
+    margin-top: -60px;
+    margin-left: 0.5em;
+    line-height: 1;
+    vertical-align: middle; }
+    /* line 96, site.css.scss */
+    header h1 .logo-text-top {
+      font-family: 'Weston-Free'; }
+
+/* line 102, site.css.scss */
+.site_nav {
+  *zoom: 1; }
+  /* line 18, bourbon/addons/_clearfix.scss */
+  .site_nav:before, .site_nav:after {
+    content: " ";
+    display: table; }
+  /* line 23, bourbon/addons/_clearfix.scss */
+  .site_nav:after {
+    clear: both; }
+  /* line 104, site.css.scss */
+  .site_nav ul {
+    *zoom: 1;
+    list-style: none; }
+    /* line 18, bourbon/addons/_clearfix.scss */
+    .site_nav ul:before, .site_nav ul:after {
+      content: " ";
+      display: table; }
+    /* line 23, bourbon/addons/_clearfix.scss */
+    .site_nav ul:after {
+      clear: both; }
+    /* line 107, site.css.scss */
+    .site_nav ul li {
+      float: left;
+      display: block;
+      padding: 0 0.9375em; }
+
+/* line 115, site.css.scss */
+.content {
+  margin-top: 6.875em; }
+
+/* line 119, site.css.scss */
+.page {
+  margin-top: 8.75em; }
+  /* line 121, site.css.scss */
+  .page section {
+    *zoom: 1; }
+    /* line 18, bourbon/addons/_clearfix.scss */
+    .page section:before, .page section:after {
+      content: " ";
+      display: table; }
+    /* line 23, bourbon/addons/_clearfix.scss */
+    .page section:after {
+      clear: both; }
+    /* line 123, site.css.scss */
+    .page section ul {
+      margin-left: 1.875em; }
+
+/* helper classes -------------------------------------- */
+/* line 130, site.css.scss */
+.orange {
+  background: #e25b29;
+  color: white;
+  margin: 40px 0;
+  padding: 40px 0; }
+  /* line 135, site.css.scss */
+  .orange h2 {
+    color: white; }
+  /* line 138, site.css.scss */
+  .orange a, .orange a:visited {
+    color: #16354a;
+    text-decoration: none; }
+    /* line 141, site.css.scss */
+    .orange a:hover, .orange a:visited:hover {
+      color: #3989c0; }
+    /* line 144, site.css.scss */
+    .orange a.button, .orange a:visited.button {
+      background: white;
+      color: #e25b29; }
+      /* line 147, site.css.scss */
+      .orange a.button:hover, .orange a:visited.button:hover {
+        background: #e6e6e6; }
+
+/* line 154, site.css.scss */
+.tan {
+  background: #aa9e84;
+  width: 100%; }
+  /* line 157, site.css.scss */
+  .tan h2, .tan h3 {
+    color: white;
+    text-shadow: 0 2px 0px #594f4f; }
+  /* line 161, site.css.scss */
+  .tan a, .tan a:visited {
+    color: #16354a;
+    text-decoration: none; }
+    /* line 164, site.css.scss */
+    .tan a:hover, .tan a:visited:hover {
+      color: #3989c0; }
+
+/* line 170, site.css.scss */
+.width {
+  width: 90%;
+  margin: 0 auto; }
+
+/* index page ----------------------------------------------- */
+/* line 179, site.css.scss */
+.intro {
+  background: #aa9e84;
+  background: #aa9e84 url("http://placekitten.com/1000/600") center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-top: 110px;
+  min-height: 12.5em;
+  height: 25.625em; }
+  /* line 189, site.css.scss */
+  .intro h2 {
+    padding-top: 3.75em;
+    color: #e25b29;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 1px 1px #16354a; }
+  /* line 196, site.css.scss */
+  .intro p {
+    color: white;
+    text-shadow: 0 2px 4px #000; }
+
+/* line 202, site.css.scss */
+.statements {
+  *zoom: 1;
+  background: #e25b29;
+  width: 90%;
+  margin: 0 auto; }
+  /* line 18, bourbon/addons/_clearfix.scss */
+  .statements:before, .statements:after {
+    content: " ";
+    display: table; }
+  /* line 23, bourbon/addons/_clearfix.scss */
+  .statements:after {
+    clear: both; }
+  /* line 207, site.css.scss */
+  .statements article {
+    margin-bottom: 15px; }
+
+/* line 212, site.css.scss */
+.accolades {
+  background: #e25b29;
+  color: white; }
+  /* line 215, site.css.scss */
+  .accolades h2 {
+    color: white;
+    text-align: center; }
+  /* line 219, site.css.scss */
+  .accolades .picture {
+    float: left;
+    margin-right: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px; }
+    /* line 226, site.css.scss */
+    .accolades .picture img {
+      border-radius: 50%;
+      width: 100%;
+      height: auto; }
+  /* line 232, site.css.scss */
+  .accolades .quote {
+    float: left;
+    font-size: 1em;
+    width: 50%;
+    padding-right: 20px; }
+  /* line 238, site.css.scss */
+  .accolades .meta {
+    margin-top: 10px; }
+    /* line 240, site.css.scss */
+    .accolades .meta strong {
+      font-size: 110%;
+      font-weight: 400; }
+    /* line 244, site.css.scss */
+    .accolades .meta p.company {
+      font-size: 90%;
+      font-weight: 300;
+      margin-top: 0; }
+
+/* line 252, site.css.scss */
+.partner {
+  margin-top: 20px; }
+  /* line 254, site.css.scss */
+  .partner h3, .partner p {
+    margin-left: 120px; }
+  /* line 257, site.css.scss */
+  .partner h3 {
+    margin-bottom: 0; }
+  /* line 260, site.css.scss */
+  .partner p {
+    margin-top: 0; }
+  /* line 263, site.css.scss */
+  .partner img {
+    float: left;
+    margin-right: 20px;
+    margin-top: 3px;
+    width: 100px; }
+
+/* line 271, site.css.scss */
+.engagement div {
+  *zoom: 1; }
+  /* line 18, bourbon/addons/_clearfix.scss */
+  .engagement div:before, .engagement div:after {
+    content: " ";
+    display: table; }
+  /* line 23, bourbon/addons/_clearfix.scss */
+  .engagement div:after {
+    clear: both; }
+  /* line 273, site.css.scss */
+  .engagement div img {
+    float: left;
+    display: block;
+    height: 100px;
+    margin-right: 20px;
+    margin-top: 2.5em; }
+  /* line 280, site.css.scss */
+  .engagement div p {
+    margin-left: 120px; }
+
+/* line 286, site.css.scss */
+.badge {
+  text-align: center; }
+  /* line 288, site.css.scss */
+  .badge img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 -20px; }
+
+/* line 295, site.css.scss */
+.stakeholders.width {
+  margin-top: 60px; }
+  /* line 297, site.css.scss */
+  .stakeholders.width h2 {
+    margin: 1.5em 0 0 0;
+    text-align: center; }
+
+/* line 302, site.css.scss */
+.call-to-action {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%; }
+
+/* line 309, site.css.scss */
+.partners {
+  margin-top: 30px;
+  text-align: center; }
+  /* line 312, site.css.scss */
+  .partners img {
+    margin: 10px 20px; }
+
+/* line 317, site.css.scss */
+hr {
+  *zoom: 1;
+  border: 0;
+  border-top: thin solid #e5e5e5;
+  border-bottom: thin solid white;
+  height: 0;
+  margin: 40px 0; }
+  /* line 18, bourbon/addons/_clearfix.scss */
+  hr:before, hr:after {
+    content: " ";
+    display: table; }
+  /* line 23, bourbon/addons/_clearfix.scss */
+  hr:after {
+    clear: both; }
+
+/* line 327, site.css.scss */
+.center {
+  margin: 20px 140px; }
+  /* line 329, site.css.scss */
+  .center h2 {
+    margin-bottom: 30px;
+    text-align: center; }
+
+/* line 335, site.css.scss */
+table {
+  border-left: 1px solid #e25b29;
+  border-top: 1px solid #e25b29;
+  margin-top: 40px;
+  width: 100%;
+  background-color: white; }
+  /* line 341, site.css.scss */
+  table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit; }
+  /* line 346, site.css.scss */
+  table td, table th {
+    border-right: 1px solid #e25b29;
+    padding: 8px; }
+  /* line 350, site.css.scss */
+  table th {
+    background-color: #aa9e84;
+    border-right: 1px solid #aa9e84;
+    border-top: 1px solid #aa9e84;
+    border-left: 1px solid #aa9e84;
+    padding-bottom: 4px;
+    text-align: left; }
+  /* line 358, site.css.scss */
+  table tr {
+    border-bottom: 1px solid #e25b29; }
+    /* line 360, site.css.scss */
+    table tr:nth-child(odd) td {
+      background-color: #ded9cf; }
+
+/* line 366, site.css.scss */
+footer, .foot {
+  *zoom: 1;
+  background-color: #aa9e84;
+  color: white;
+  position: static;
+  width: 100%; }
+  /* line 18, bourbon/addons/_clearfix.scss */
+  footer:before, footer:after, .foot:before, .foot:after {
+    content: " ";
+    display: table; }
+  /* line 23, bourbon/addons/_clearfix.scss */
+  footer:after, .foot:after {
+    clear: both; }
+  /* line 372, site.css.scss */
+  footer section, .foot section {
+    margin: 0 auto; }
+  /* line 375, site.css.scss */
+  footer .centered, .foot .centered {
+    text-align: center; }
+  /* line 378, site.css.scss */
+  footer h3, .foot h3 {
+    margin-top: 0;
+    color: #fff;
+    font-weight: 400; }
+  /* line 383, site.css.scss */
+  footer ul, .foot ul {
+    padding-left: 0; }
+  /* line 386, site.css.scss */
+  footer li, .foot li {
+    list-style: none; }
+  /* line 389, site.css.scss */
+  footer p, .foot p {
+    margin: 0;
+    padding: 0; }
+  /* line 393, site.css.scss */
+  footer .social_row, .foot .social_row {
+    padding-top: 10px; }
+
+/* line 34, modules/mixins.css.scss */
+.white-background {
+  background: white;
+  border-radius: 5px;
+  color: #e25b29;
+  font-size: 0.75em;
+  padding: 2px 7px; }
+  /* line 40, modules/mixins.css.scss */
+  .white-background:hover {
+    background: #be461a; }
+  /* line 43, modules/mixins.css.scss */
+  .white-background a:hover {
+    color: #16354a !important; }
+
+/*
+Flexible Grid 
+adapted from : http://framelessgrid.com
+*/
+/*
+	Margin, padding, and border resets
+	except for form elements
+*/
+/* line 56, modules/grid.css.scss */
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/*
+  min-width 320px and max-width 480px
+*/
+@media only screen and (min-width: 20em) and (max-width: 34.375em) {
+  /* line 11, responsive.css.scss */
+  html body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1em;
+    width: 100%; }
+    /* line 15, responsive.css.scss */
+    html body .site_nav {
+      float: none; }
+      /* line 17, responsive.css.scss */
+      html body .site_nav ul {
+        margin: 0.625em 0; }
+        /* line 19, responsive.css.scss */
+        html body .site_nav ul li {
+          background: #e25b29;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+          display: block;
+          float: none;
+          font-size: 1.25em;
+          padding: 0 0.46em; }
+          /* line 26, responsive.css.scss */
+          html body .site_nav ul li a {
+            color: white; }
+            /* line 28, responsive.css.scss */
+            html body .site_nav ul li a.button {
+              margin: 0;
+              padding: 0; }
+              /* line 30, responsive.css.scss */
+              html body .site_nav ul li a.button:hover {
+                background: none; }
+
+  /* line 40, responsive.css.scss */
+  header {
+    position: static; }
+
+  /* line 43, responsive.css.scss */
+  .intro, .content {
+    margin-top: 0; }
+
+  /* line 47, responsive.css.scss */
+  h1 div {
+    font-size: 0.75em; }
+
+  /* line 51, responsive.css.scss */
+  footer.foot div {
+    margin-bottom: 20px; }
+  /* line 54, responsive.css.scss */
+  footer.foot .centered {
+    text-align: left; }
+
+  /* line 58, responsive.css.scss */
+  .width {
+    margin-bottom: 1.875em; }
+    /* line 60, responsive.css.scss */
+    .width h2 {
+      margin-top: 0;
+      padding-top: 0; }
+    /* line 64, responsive.css.scss */
+    .width p {
+      margin: 0;
+      padding: 0; }
+
+  /* line 68, responsive.css.scss */
+  .intro .width h2 {
+    padding-top: 3.75em; }
+
+  /* line 72, responsive.css.scss */
+  .intro p {
+    font-size: 0.875em; }
+
+  /* line 76, responsive.css.scss */
+  .accolades .quote {
+    float: left;
+    width: 60%; }
+
+  /* line 81, responsive.css.scss */
+  article {
+    *zoom: 1;
+    clear: both;
+    display: block;
+    width: 100%; }
+    /* line 18, bourbon/addons/_clearfix.scss */
+    article:before, article:after {
+      content: " ";
+      display: table; }
+    /* line 23, bourbon/addons/_clearfix.scss */
+    article:after {
+      clear: both; }
+    /* line 86, responsive.css.scss */
+    article.last {
+      clear: both; }
+
+  /* line 91, responsive.css.scss */
+  .page {
+    margin-top: 0; }
+    /* line 93, responsive.css.scss */
+    .page h2 {
+      font-size: 1.125em; }
+    /* line 96, responsive.css.scss */
+    .page h3 {
+      font-size: 1em; }
+
+  /* line 102, responsive.css.scss */
+  .badge img {
+    width: 100%;
+    height: auto; }
+
+  /* line 108, responsive.css.scss */
+  footer.foot section {
+    width: 70%; }
+
+  /* line 113, responsive.css.scss */
+  p, ul, td, th {
+    font-size: 0.875em; }
+
+  /* line 116, responsive.css.scss */
+  ul ul {
+    font-size: 1em; }
+
+  /* line 119, responsive.css.scss */
+  h1 {
+    font-size: 1.75em; }
+
+  /* line 123, responsive.css.scss */
+  #homepage #sponsors h2 {
+    padding-top: 20px;
+    text-align: center; }
+  /* line 127, responsive.css.scss */
+  #homepage #sponsors .image-row {
+    text-align: center; }
+    /* line 129, responsive.css.scss */
+    #homepage #sponsors .image-row a {
+      margin: 0 auto; } }
+/*
+  min-width 550px and max-width 1300px
+*/
+@media screen and (min-width: 34.375em) and (max-width: 88.564em) {
+  /* line 142, responsive.css.scss */
+  .site_nav {
+    float: none;
+    clear: both; }
+    /* line 145, responsive.css.scss */
+    .site_nav ul {
+      margin: 0.9375em 0; }
+
+  /* line 150, responsive.css.scss */
+  .picture {
+    float: left;
+    margin-right: 10px;
+    width: 10%; }
+    /* line 154, responsive.css.scss */
+    .picture img {
+      width: 100%;
+      height: auto; }
+
+  /* line 160, responsive.css.scss */
+  div.page {
+    margin-top: 10.625em; }
+
+  /* line 164, responsive.css.scss */
+  .foot div {
+    float: left;
+    width: 30%; }
+    /* line 167, responsive.css.scss */
+    .foot div:first-child {
+      width: 40%; }
+    /* line 170, responsive.css.scss */
+    .foot div.last {
+      float: right;
+      text-align: right; }
+    /* line 174, responsive.css.scss */
+    .foot div #social_row {
+      float: right; }
+
+  /* line 178, responsive.css.scss */
+  .width {
+    margin-bottom: 1.875em; }
+    /* line 180, responsive.css.scss */
+    .width h2 {
+      margin-top: 0;
+      padding-top: 0; }
+
+  /* line 185, responsive.css.scss */
+  .intro .width h2 {
+    padding-top: 3.75em; }
+
+  /* line 188, responsive.css.scss */
+  .accolades .quote {
+    float: left;
+    width: 20%; }
+
+  /* line 193, responsive.css.scss */
+  #cta {
+    padding: 12px 24px;
+    position: relative;
+    left: -24px; }
+
+  /* line 198, responsive.css.scss */
+  #menu ul {
+    background-color: #e25b29;
+    margin-top: 15px;
+    padding: 8px;
+    position: relative;
+    left: -40px;
+    width: 585px; }
+
+  /* line 206, responsive.css.scss */
+  #menu ul li a {
+    font-size: 1.1875em; }
+
+  /* line 210, responsive.css.scss */
+  #homepage #sponsors h2 {
+    padding-top: 20px;
+    text-align: center; }
+  /* line 214, responsive.css.scss */
+  #homepage #sponsors .image-row {
+    margin-left: 16.5em; } }
+/* line 221, responsive.css.scss */
+p, ul, td, th {
+  font-size: 1em; }
+
+/* line 225, responsive.css.scss */
+ul ul {
+  font-size: 1em; }
+
+/* line 228, responsive.css.scss */
+h1 {
+  font-size: 2.875em; }
+
+/* line 231, responsive.css.scss */
+h2 {
+  border-bottom: 1px dashed #16354a;
+  color: #e25b29;
+  display: block;
+  margin-top: 1.875em;
+  margin-bottom: 1.875em;
+  padding-top: 1.25em;
+  text-align: center; }
+
+/* line 240, responsive.css.scss */
+.tan, .orange {
+  margin-top: 1.875em;
+  margin-bottom: 1.875em;
+  padding: 1.875em 0; }
+  /* line 244, responsive.css.scss */
+  .tan .width, .orange .width {
+    margin-bottom: 0; }
+
+/*
+  max-width 1150px
+*/
+@media only screen and (min-width: 88.564em) {
+  /* line 254, responsive.css.scss */
+  p {
+    font-size: 1em; }
+
+  /* line 257, responsive.css.scss */
+  h1 {
+    font-size: 4.125em; }
+
+  /* line 260, responsive.css.scss */
+  h2 {
+    font-size: 1.625em; }
+
+  /* line 263, responsive.css.scss */
+  h3 {
+    margin-top: 1.25em; }
+
+  /* line 267, responsive.css.scss */
+  .intro .width h2 {
+    border-bottom: 1px dashed #16354a;
+    color: #e25b29;
+    display: block;
+    font-family: "Weston-Free";
+    font-size: 2.5em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-top: 1.875em;
+    text-align: center; }
+
+  /* line 279, responsive.css.scss */
+  header > div {
+    float: left;
+    margin-right: 40%; }
+
+  /* line 283, responsive.css.scss */
+  .site_nav {
+    float: left;
+    padding: 3.125em 0 0 0; }
+
+  /* line 288, responsive.css.scss */
+  header img {
+    /*float: left;
+      padding-top: 8px;
+      padding-left: 15px;*/ }
+
+  /* line 293, responsive.css.scss */
+  #menu ul {
+    background-color: #e25b29;
+    margin-top: 40px;
+    padding: 8px;
+    position: relative;
+    left: -40px;
+    width: 875px; }
+
+  /* line 301, responsive.css.scss */
+  #menu ul li.first {
+    margin-left: 24px; }
+
+  /* line 304, responsive.css.scss */
+  #menu ul li {
+    margin-right: 36px; }
+
+  /* line 307, responsive.css.scss */
+  #intro p {
+    padding: 0 100px; }
+
+  /* line 310, responsive.css.scss */
+  #cta {
+    border: 2px solid #aa9e84;
+    -moz-box-shadow: 4px 4px 7px #212121;
+    -webkit-box-shadow: 4px 4px 7px rgba(33, 33, 33, 0.7);
+    box-shadow: 4px 4px 7px rgba(33, 33, 33, 0.7);
+    margin: 1em auto 3em;
+    padding: 24px 36px;
+    width: 700px; }
+    /* line 318, responsive.css.scss */
+    #cta .left-col, #cta .right-col {
+      width: 21em; }
+    /* line 321, responsive.css.scss */
+    #cta h2 {
+      margin-bottom: 0.5em; }
+    /* line 324, responsive.css.scss */
+    #cta h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 0.75em; }
+    /* line 329, responsive.css.scss */
+    #cta p {
+      margin-bottom: 0.5em; }
+    /* line 332, responsive.css.scss */
+    #cta .apply {
+      margin-top: 1.5em; }
+
+  /* line 337, responsive.css.scss */
+  .quote {
+    font-size: 0.875em;
+    width: 100%; }
+
+  /* line 342, responsive.css.scss */
+  article {
+    *zoom: 1;
+    float: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2em;
+    width: 33.25%; }
+    /* line 18, bourbon/addons/_clearfix.scss */
+    article:before, article:after {
+      content: " ";
+      display: table; }
+    /* line 23, bourbon/addons/_clearfix.scss */
+    article:after {
+      clear: both; }
+    /* line 348, responsive.css.scss */
+    article.last {
+      float: left;
+      margin-right: 0; }
+
+  /* line 354, responsive.css.scss */
+  .width {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1.875em; }
+    /* line 358, responsive.css.scss */
+    .width h2 {
+      margin-top: 0;
+      padding-top: 0; }
+
+  /* line 364, responsive.css.scss */
+  .white-background {
+    width: 30%;
+    text-align: center; }
+
+  /* line 369, responsive.css.scss */
+  footer {
+    *zoom: 1;
+    border-top: 5px solid #e25b29;
+    position: relative;
+    left: -24px;
+    margin-top: 40px;
+    padding: 8px;
+    width: 875px; }
+    /* line 18, bourbon/addons/_clearfix.scss */
+    footer:before, footer:after {
+      content: " ";
+      display: table; }
+    /* line 23, bourbon/addons/_clearfix.scss */
+    footer:after {
+      clear: both; }
+    /* line 378, responsive.css.scss */
+    footer section {
+      *zoom: 1;
+      margin: 0 auto;
+      width: 95%; }
+      /* line 18, bourbon/addons/_clearfix.scss */
+      footer section:before, footer section:after {
+        content: " ";
+        display: table; }
+      /* line 23, bourbon/addons/_clearfix.scss */
+      footer section:after {
+        clear: both; }
+    /* line 384, responsive.css.scss */
+    footer div {
+      float: left;
+      width: 33%; }
+      /* line 387, responsive.css.scss */
+      footer div.last {
+        float: right;
+        text-align: right; }
+      /* line 391, responsive.css.scss */
+      footer div #social_row {
+        float: right; }
+
+  /* line 398, responsive.css.scss */
+  #homepage #sponsors {
+    padding-top: 10px; }
+    /* line 399, responsive.css.scss */
+    #homepage #sponsors .image-row {
+      margin-left: 16.5em; }
+    /* line 403, responsive.css.scss */
+    #homepage #sponsors .third-col {
+      margin: 0 auto;
+      text-align: center; }
+    /* line 407, responsive.css.scss */
+    #homepage #sponsors #crowdcompass a {
+      top: 9px; }
+    /* line 410, responsive.css.scss */
+    #homepage #sponsors #elemental a {
+      top: -3px; } }
+/* line 34, modules/mixins.css.scss */
+.white-background {
+  background: white;
+  border-radius: 5px;
+  color: #e25b29;
+  font-size: 0.75em;
+  padding: 2px 7px; }
+  /* line 40, modules/mixins.css.scss */
+  .white-background:hover {
+    background: #be461a; }
+  /* line 43, modules/mixins.css.scss */
+  .white-background a:hover {
+    color: #16354a !important; }
+
+/* line 5, pages.css.scss */
+#page-program table th {
+  background-color: transparent;
+  border-color: transparent; }
+
+/* line 12, pages.css.scss */
+#page-students .student {
+  margin-bottom: 30px; }
+  /* line 15, pages.css.scss */
+  #page-students .student img {
+    width: 250px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px; }
+  /* line 21, pages.css.scss */
+  #page-students .student a {
+    display: block; }
+  /* line 24, pages.css.scss */
+  #page-students .student h3, #page-students .student a, #page-students .student p {
+    margin-left: 280px; }
